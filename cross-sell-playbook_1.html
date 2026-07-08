@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross-Sell Playbook — 8 Initiatives | Liberty Business</title>
+<style>
+  :root{
+    --blue:#0071ce;
+    --blue-dark:#00509a;
+    --orange:#ff5300;
+    --ink:#1a2733;
+    --muted:#5b6b7a;
+    --line:#e2e6ea;
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --green:#1a8f4c;
+    --green-bg:#eaf7ef;
+    --amber-bg:#fff4e8;
+    --blue-bg:#eaf3fb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height:1.5;
+  }
+  header.masthead{
+    background:linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    color:#fff; padding:36px 5vw 28px;
+  }
+  header.masthead .eyebrow{
+    text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:700;
+    opacity:.85;
+  }
+  header.masthead h1{
+    font-size:30px; margin:8px 0 6px; font-weight:800; max-width:900px;
+  }
+  header.masthead p.sub{ margin:0; opacity:.9; font-size:14.5px; max-width:820px;}
+  .headline-stats{ display:flex; gap:28px; margin-top:20px; flex-wrap:wrap;}
+  .headline-stats div{ background:rgba(255,255,255,.12); border-radius:8px; padding:10px 16px; min-width:140px;}
+  .headline-stats .num{ font-size:20px; font-weight:800;}
+  .headline-stats .lbl{ font-size:11.5px; opacity:.85; text-transform:uppercase; letter-spacing:.06em;}
+
+  nav.toc{
+    position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid var(--line);
+    padding:10px 5vw; display:flex; gap:6px; overflow-x:auto; box-shadow:0 2px 6px rgba(0,0,0,.04);
+  }
+  nav.toc a{
+    white-space:nowrap; font-size:12.5px; font-weight:600; color:var(--blue-dark);
+    text-decoration:none; background:var(--blue-bg); padding:7px 12px; border-radius:20px;
+    border:1px solid transparent;
+  }
+  nav.toc a:hover{ border-color:var(--blue);}
+
+  main{ max-width:1080px; margin:0 auto; padding:34px 5vw 80px;}
+
+  .intro-block{
+    background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px 24px;
+    margin-bottom:36px; font-size:14.5px; color:var(--muted);
+  }
+  .intro-block b{ color:var(--ink);}
+
+  section.initiative{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    margin-bottom:40px; overflow:hidden; scroll-margin-top:64px;
+  }
+  .init-head{
+    padding:22px 26px 18px; border-bottom:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;
+  }
+  .init-head .tag{
+    font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--orange); margin-bottom:4px;
+  }
+  .init-head h2{ margin:0; font-size:21px; font-weight:800;}
+  .init-badge{
+    background:var(--blue-bg); color:var(--blue-dark); font-weight:700; font-size:13px;
+    border-radius:8px; padding:8px 14px; text-align:center; min-width:110px;
+  }
+  .init-badge .n{ font-size:17px;}
+  .init-badge .l{ font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; opacity:.8;}
+
+  .compare{
+    display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:1px solid var(--line);
+  }
+  @media (max-width:720px){ .compare{ grid-template-columns:1fr;} }
+  .compare .col{ padding:20px 26px;}
+  .compare .col.now{ border-right:1px solid var(--line); background:#fbfcfd;}
+  @media (max-width:720px){ .compare .col.now{ border-right:none; border-bottom:1px solid var(--line);} }
+  .compare .col.target{ background:var(--green-bg);}
+  .compare h4{
+    margin:0 0 10px; font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted);
+  }
+  .compare .col.target h4{ color:var(--green);}
+  .kv{ display:flex; justify-content:space-between; font-size:13.5px; padding:4px 0;}
+  .kv span:first-child{ color:var(--muted);}
+  .kv span:last-child{ font-weight:700;}
+  .offer-name{ font-size:17px; font-weight:800; color:var(--green); margin:2px 0 10px;}
+  .offer-price{ font-size:14px; font-weight:700; color:var(--ink); background:#fff; display:inline-block;
+    padding:5px 10px; border-radius:6px; border:1px solid #cfe9d9; margin-bottom:10px;}
+  .metric-row{ display:flex; gap:18px; margin-top:8px; flex-wrap:wrap;}
+  .metric-row .m{ font-size:12.5px;}
+  .metric-row .m b{ display:block; font-size:15px; color:var(--ink);}
+
+  .overview{ padding:20px 26px; border-bottom:1px solid var(--line); font-size:14px; color:var(--ink);}
+  .overview b.lead{ color:var(--blue-dark);}
+
+  .phases{ padding:22px 26px 26px;}
+  .phases h3.section-label{
+    font-size:12px; text-transform:uppercase; letter-spacing:.09em; color:var(--muted);
+    margin:0 0 14px;
+  }
+  .phase{
+    border:1px solid var(--line); border-radius:10px; margin-bottom:14px; overflow:hidden;
+  }
+  .phase-head{
+    display:flex; align-items:center; gap:12px; padding:12px 16px; background:#fafbfc;
+    border-bottom:1px solid var(--line);
+  }
+  .phase-num{
+    background:var(--blue); color:#fff; font-weight:800; font-size:13px; width:26px; height:26px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .phase-title{ font-weight:700; font-size:14.5px;}
+  .phase-sub{ font-size:12px; color:var(--muted); margin-left:auto; font-weight:600;}
+  .phase-body{ padding:14px 16px 16px; display:grid; grid-template-columns:1.4fr 1fr; gap:16px;}
+  @media (max-width:720px){ .phase-body{ grid-template-columns:1fr;} }
+  .phase-body ol{ margin:0; padding-left:18px; font-size:13.3px;}
+  .phase-body ol li{ margin-bottom:6px;}
+  .kpi-box{
+    background:var(--amber-bg); border:1px solid #f3ddb8; border-radius:8px; padding:10px 12px; font-size:12.6px;
+  }
+  .kpi-box .kpi-title{ font-weight:700; text-transform:uppercase; font-size:10.8px; letter-spacing:.05em;
+    color:#92620a; margin-bottom:6px;}
+  .kpi-box ul{ margin:0; padding-left:16px;}
+  .kpi-box li{ margin-bottom:3px;}
+  .exclusion-note{
+    font-size:12px; color:var(--blue-dark); background:var(--blue-bg); border-radius:6px; padding:8px 10px;
+    margin-top:8px;
+  }
+
+  .footer-note{
+    text-align:center; color:var(--muted); font-size:12.5px; margin-top:20px; padding:16px;
+  }
+  .toplink{ display:inline-block; margin-top:14px; font-size:12px; color:var(--blue); text-decoration:none; font-weight:700;}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">Liberty Business &nbsp;|&nbsp; B2B GTM &nbsp;|&nbsp; Next Best Offer</div>
+  <h1>Cross-Sell Playbook: 8 Initiatives to Convert the Base</h1>
+  <p class="sub">Every SOHO and Small Business account maps to one of eight profiles based on what it holds and bills today.
+  This playbook turns each of the eight BI-defined groups into an activation strategy: an overview, the target offer, and a
+  phased outreach motion — digital, automated, human, and sustained — with a measurement plan and a responder-exclusion
+  mechanism at every phase.</p>
+  <div class="headline-stats">
+    <div><div class="num">19,664</div><div class="lbl">Accounts in scope</div></div>
+    <div><div class="num">$2.2M</div><div class="lbl">Cross-sell revenue potential /yr</div></div>
+    <div><div class="num">8</div><div class="lbl">Distinct initiatives</div></div>
+    <div><div class="num">4</div><div class="lbl">Outreach phases per initiative</div></div>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#init-1">1. SOHO mobile only, under $60</a>
+  <a href="#init-2">2. SOHO mobile only, $60+</a>
+  <a href="#init-3">3. SOHO fixed only, under $100</a>
+  <a href="#init-4">4. SOHO fixed only, $100+</a>
+  <a href="#init-5">5. Small fixed only, under $250</a>
+  <a href="#init-6">6. Small mobile only, under $300</a>
+  <a href="#init-7">7. Small mobile only, $300+</a>
+  <a href="#init-8">8. Small fixed only, $250+</a>
+</nav>
+
+<main>
+
+<div class="intro-block">
+  <b>How to read each initiative:</b> the left card is the account's profile today, the right card is the target offer
+  we lead with. Below that, every initiative runs the same four-phase motion, tailored to the offer and the segment —
+  <b>Phase 1</b> is a self-service digital touch that creates a Salesforce Lead, <b>Phase 2</b> is an automated dialer
+  sweep of non-responders, <b>Phase 3</b> is a manual, human touch from the field or account teams, and <b>Phase 4</b>
+  closes the loop with re-engagement and reporting. Every phase excludes accounts that already responded or converted
+  in a prior phase, tracked as a Customer Interaction / Lead Status on the account in Salesforce.
+</div>
+
+<!-- ================= INITIATIVE 1 ================= -->
+<section class="initiative" id="init-1">
+  <div class="init-head">
+    <div>
+      <div class="tag">Initiative 1 of 8</div>
+      <h2>SOHO mobile only, under $60</h2>
+    </div>
+    <div class="init-badge"><div class="n">1,815</div><div class="l">accounts</div></div>
+  </div>
+  <div class="compare">
+    <div class="col now">
+      <h4>Profile today</h4>
+      <div class="kv"><span>Avg. bill/mo</span><span>$37</span></div>
+      <div class="kv"><span>Holds</span><span>1 mobile line</span></div>
+      <div class="kv"><span>Segment</span><span>SOHO, mobile-only</span></div>
+    </div>
+    <div class="col target">
+      <h4>Target offer</h4>
+      <div class="offer-name">Add Fixed Internet</div>
+      <div class="offer-price">1GB Internet for $84.99/mo</div>
+      <div class="metric-row">
+        <div class="m"><b>+$80</b>ARPU</div>
+        <div class="m"><b>5%</b>Est. conversion</div>
+        <div class="m"><b>$0.09M</b>Annualized</div>
+      </div>
+    </div>
+  </div>
+  <div class="overview">
+    <b class="lead">Strategy overview —</b> This is a low-bill, mobile-only base with no fixed anchor on the account,
+    so the play is to establish a home/office internet connection at a flat, easy-to-say price point. Because current
+    spend is light ($37/mo), the messaging leads with value and simplicity — "one line today, home internet for
+    $84.99" — rather than a bundle discount, since there isn't yet a second service to bundle against.
+  </div>
+  <div class="phases">
+    <h3 class="section-label">Phased activation plan</h3>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <div class="phase-title">Digital warm-up — email + self-service form</div>
+        <div class="phase-sub">Owner: Marketing / CX</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Send a bilingual email/SMS to the 1,815 accounts: "Add 1GB Internet for $84.99/mo" with a link to a
+          landing page.</li>
+          <li>Landing page captures name, account/mobile number, best time to call, and consent — submission creates a
+          Salesforce Lead tagged <i>Campaign = SOHO-Mobile-Under60-FixedAttach</i>, auto-routed to a queue of assigned
+          agents.</li>
+          <li>Include the customer service number on every touchpoint so an interested customer can call in directly
+          without waiting for a callback.</li>
+          <li>Agent SLA: call back submitted leads within 24 business hours.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Delivery / open / click-through rate</li>
+            <li>Landing page completion rate</li>
+            <li>Leads created in SF</li>
+            <li>Agent contact & close rate on leads</li>
+            <li>Cost per lead / cost per sale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <div class="phase-title">Automated dialer sweep of non-responders</div>
+        <div class="phase-sub">Owner: Telesales / Dialer ops</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Export the 1,815-account base to Salesforce as a Campaign; filter out anyone with a Phase 1 Lead or
+          Customer Interaction of type "Responded/Converted."</li>
+          <li>Upload the remaining base to the outbound dialer with the same $84.99 1GB offer script.</li>
+          <li>Customer presses # to accept and is transferred live to an available agent; otherwise the call logs as
+          no-interest or no-answer.</li>
+          <li>Log every dial outcome back to Salesforce as a Customer Interaction against the account.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Dial attempts vs. connects (contact rate)</li>
+            <li>% pressing # (interest rate)</li>
+            <li>Agent-transfer conversion rate</li>
+            <li>Sales closed / cost per acquisition</li>
+          </ul>
+        </div>
+        <div class="exclusion-note">Exclusion mechanism: Lead Status ("Responded"/"Converted") or Customer
+        Interaction log from Phase 1 filters the dialer file before upload.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <div class="phase-title">Human touch — field &amp; account teams</div>
+        <div class="phase-sub">Owner: D2D / Retail / Account Executives</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Remaining non-responders (Phase 1 + Phase 2) route to Door-to-Door reps for the residential/SOHO
+          footprint, since this segment behaves more like a home-based account.</li>
+          <li>Reps carry a target list by zone with the offer pre-loaded and a simple close path (tablet-based order
+          entry).</li>
+          <li>Every visit/attempt logs as a Customer Interaction, whether or not it converts.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Accounts assigned vs. visited</li>
+            <li>Contact & close rate</li>
+            <li>Revenue realized vs. $0.09M target</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">4</div>
+        <div class="phase-title">Sustain &amp; learn — nurture and closed-loop reporting</div>
+        <div class="phase-sub">Owner: Marketing Ops / RevOps</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Accounts untouched by Phases 1–3 roll into a quarterly evergreen nurture (bill insert / SMS / retail
+          signage) rather than being dropped.</li>
+          <li>Capture close/loss reason on every attempted sale to refine offer or price in the next cycle.</li>
+          <li>Publish a weekly funnel dashboard: sent → leads → dials → visits → sold, by phase.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Cumulative funnel conversion vs. 5% target</li>
+            <li>ARPU lift realized at 90 days post-sale</li>
+            <li>Attach retention (churn of the new internet line)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="toplink" href="#init-1" onclick="window.scrollTo(0,0);return false;">↑ Back to top</a>
+</section>
+
+<!-- ================= INITIATIVE 2 ================= -->
+<section class="initiative" id="init-2">
+  <div class="init-head">
+    <div>
+      <div class="tag">Initiative 2 of 8</div>
+      <h2>SOHO mobile only, $60 and above</h2>
+    </div>
+    <div class="init-badge"><div class="n">2,025</div><div class="l">accounts</div></div>
+  </div>
+  <div class="compare">
+    <div class="col now">
+      <h4>Profile today</h4>
+      <div class="kv"><span>Avg. bill/mo</span><span>$112</span></div>
+      <div class="kv"><span>Holds</span><span>About 2 mobile lines</span></div>
+      <div class="kv"><span>Segment</span><span>SOHO, mobile-only</span></div>
+    </div>
+    <div class="col target">
+      <h4>Target offer</h4>
+      <div class="offer-name">Add Fixed Internet</div>
+      <div class="offer-price">1GB Internet for $84.99/mo</div>
+      <div class="metric-row">
+        <div class="m"><b>+$80</b>ARPU</div>
+        <div class="m"><b>5%</b>Est. conversion</div>
+        <div class="m"><b>$0.10M</b>Annualized</div>
+      </div>
+    </div>
+  </div>
+  <div class="overview">
+    <b class="lead">Strategy overview —</b> Same target offer as Initiative 1 — the 1GB / $84.99 anchor — but this group
+    already spends over $60/mo across ~2 mobile lines, so the pitch shifts from "add internet" to "you already run
+    your business on mobile, now add a fixed line for reliability and a dedicated business number/Wi-Fi." The higher
+    existing spend also means these accounts can be flagged for a small loyalty discount if they've been on file 12+
+    months, to protect the base while cross-selling.
+  </div>
+  <div class="phases">
+    <h3 class="section-label">Phased activation plan</h3>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <div class="phase-title">Digital warm-up — email + self-service form</div>
+        <div class="phase-sub">Owner: Marketing / CX</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Bilingual email/SMS to the 2,025 accounts: "You run 2 lines with us — add reliable business internet for
+          $84.99/mo."</li>
+          <li>Landing page form → Salesforce Lead, Campaign = <i>SOHO-Mobile-60Plus-FixedAttach</i>, routed to an
+          assigned agent queue.</li>
+          <li>Customer service number included for immediate inbound requests.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Open / click / form completion rate</li>
+            <li>Leads created &amp; agent close rate</li>
+            <li>Cost per lead / cost per sale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <div class="phase-title">Automated dialer sweep of non-responders</div>
+        <div class="phase-sub">Owner: Telesales / Dialer ops</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Upload non-responders (exclude Phase 1 Leads/Interactions) to the dialer with the same $84.99 offer,
+          option to mention the tenure loyalty discount if eligible.</li>
+          <li>Press # to transfer live; log every outcome as a Customer Interaction.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Contact rate / interest rate (# pressed)</li>
+            <li>Transfer-to-close conversion</li>
+            <li>Cost per acquisition</li>
+          </ul>
+        </div>
+        <div class="exclusion-note">Exclusion mechanism: filter dialer file on Lead/Interaction status from Phase 1
+        before each nightly load.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <div class="phase-title">Human touch — field &amp; account teams</div>
+        <div class="phase-sub">Owner: D2D / Retail teams</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Route remaining accounts to D2D or in-store retail reps by zip/zone with the offer and eligibility
+          flags pre-loaded.</li>
+          <li>Log every attempt as a Customer Interaction regardless of outcome.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Visits vs. contacts vs. sales</li>
+            <li>Revenue realized vs. $0.10M target</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">4</div>
+        <div class="phase-title">Sustain &amp; learn</div>
+        <div class="phase-sub">Owner: Marketing Ops / RevOps</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Roll untouched accounts into evergreen nurture (bill insert, SMS, retail signage).</li>
+          <li>Track loss reasons to test a price or bundle variant next cycle.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Funnel conversion vs. 5% target</li>
+            <li>90-day ARPU lift &amp; attach retention</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="toplink" href="#init-2" onclick="window.scrollTo(0,0);return false;">↑ Back to top</a>
+</section>
+
+<!-- ================= INITIATIVE 3 ================= -->
+<section class="initiative" id="init-3">
+  <div class="init-head">
+    <div>
+      <div class="tag">Initiative 3 of 8</div>
+      <h2>SOHO fixed only, bills under $100</h2>
+    </div>
+    <div class="init-badge"><div class="n">4,832</div><div class="l">accounts</div></div>
+  </div>
+  <div class="compare">
+    <div class="col now">
+      <h4>Profile today</h4>
+      <div class="kv"><span>Avg. bill/mo</span><span>$85</span></div>
+      <div class="kv"><span>Holds</span><span>1 internet line</span></div>
+      <div class="kv"><span>Segment</span><span>SOHO, fixed-only</span></div>
+    </div>
+    <div class="col target">
+      <h4>Target offer</h4>
+      <div class="offer-name">Add 1 Mobile Line</div>
+      <div class="offer-price">Simple Mobile Plan — $40 + taxes (1 line)</div>
+      <div class="metric-row">
+        <div class="m"><b>+$30</b>ARPU</div>
+        <div class="m"><b>12%</b>Est. conversion</div>
+        <div class="m"><b>$0.21M</b>Annualized</div>
+      </div>
+    </div>
+  </div>
+  <div class="overview">
+    <b class="lead">Strategy overview —</b> This is the largest single group (4,832 accounts) and the highest-confidence
+    conversion (12%), which makes it the priority initiative for scale. These accounts already trust us for internet
+    but have no mobile line — the ask is small and low-friction: one line, one flat price, no bundle math required.
+    Lead every touch with "Simple Mobile Plan, $40 + taxes" so the price is the headline, not a feature list.
+  </div>
+  <div class="phases">
+    <h3 class="section-label">Phased activation plan</h3>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <div class="phase-title">Digital warm-up — email + self-service form</div>
+        <div class="phase-sub">Owner: Marketing / CX</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Email/SMS to all 4,832 accounts: "Add a mobile line for $40 + taxes." Link to a one-field-lighter
+          landing page given the size of this base.</li>
+          <li>Form submission creates a Salesforce Lead, Campaign = <i>SOHO-Fixed-Under100-1LineAttach</i>, distributed
+          across the assigned agent pool by round robin (volume requires more than one agent).</li>
+          <li>Customer service number on every touch for direct inbound.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Delivery / open / CTR by wave (send in batches given volume)</li>
+            <li>Form completion &amp; leads created</li>
+            <li>Agent close rate &amp; cost per sale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <div class="phase-title">Automated dialer sweep of non-responders</div>
+        <div class="phase-sub">Owner: Telesales / Dialer ops</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Exclude Phase 1 responders, upload remainder to the dialer with the $40 + taxes single-line script.</li>
+          <li>Press # to transfer live for same-call activation where possible (this is a simple, one-line add — a
+          good candidate for same-call close).</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Contact rate / # press rate</li>
+            <li>Same-call close rate</li>
+            <li>Cost per acquisition</li>
+          </ul>
+        </div>
+        <div class="exclusion-note">Exclusion mechanism: Lead/Interaction status from Phase 1 filters the dialer file
+        each night; given the base size, run this in weekly waves rather than all at once.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <div class="phase-title">Human touch — field &amp; account teams</div>
+        <div class="phase-sub">Owner: D2D / Retail</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Route the residual base to D2D reps in phases by zone; a $40 single-line add is an easy door-step close
+          and a good filler offer alongside other D2D visits in the same neighborhoods.</li>
+          <li>Log every attempt as a Customer Interaction.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Visits vs. sales, by zone</li>
+            <li>Revenue realized vs. $0.21M target</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">4</div>
+        <div class="phase-title">Sustain &amp; learn</div>
+        <div class="phase-sub">Owner: Marketing Ops / RevOps</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Given the size of this group, keep a rolling monthly nurture wave for anyone still untouched, rather
+          than a single evergreen batch.</li>
+          <li>A/B the $40 flat price against a first-3-months promo price in a small holdout to see if conversion
+          improves enough to justify the discount.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Cumulative funnel conversion vs. 12% target</li>
+            <li>Promo vs. flat-price conversion lift (holdout test)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="toplink" href="#init-3" onclick="window.scrollTo(0,0);return false;">↑ Back to top</a>
+</section>
+
+<!-- ================= INITIATIVE 4 ================= -->
+<section class="initiative" id="init-4">
+  <div class="init-head">
+    <div>
+      <div class="tag">Initiative 4 of 8</div>
+      <h2>SOHO fixed only, $100 and above</h2>
+    </div>
+    <div class="init-badge"><div class="n">4,412</div><div class="l">accounts</div></div>
+  </div>
+  <div class="compare">
+    <div class="col now">
+      <h4>Profile today</h4>
+      <div class="kv"><span>Avg. bill/mo</span><span>$145</span></div>
+      <div class="kv"><span>Holds</span><span>Internet + voice, some TV</span></div>
+      <div class="kv"><span>Segment</span><span>SOHO, fixed-only</span></div>
+    </div>
+    <div class="col target">
+      <h4>Target offer</h4>
+      <div class="offer-name">Add 2 Mobile Lines</div>
+      <div class="offer-price">Simple Mobile Plan — $30/line (2 lines)</div>
+      <div class="metric-row">
+        <div class="m"><b>+$60</b>ARPU</div>
+        <div class="m"><b>12%</b>Est. conversion</div>
+        <div class="m"><b>$0.38M</b>Annualized</div>
+      </div>
+    </div>
+  </div>
+  <div class="overview">
+    <b class="lead">Strategy overview —</b> This group is already a richer fixed customer (internet + voice, some TV)
+    with a higher bill, so the pitch is a bundle-savings story rather than a single add: "2 mobile lines at $30 each
+    when bundled with what you already have." The multi-line framing also positions this as a small-business-ready
+    mobile fleet starter, which sets up naturally for future upsell into the Small Business tier.
+  </div>
+  <div class="phases">
+    <h3 class="section-label">Phased activation plan</h3>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <div class="phase-title">Digital warm-up — email + self-service form</div>
+        <div class="phase-sub">Owner: Marketing / CX</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Email/SMS: "Bundle 2 mobile lines at $30 each with your current service." Landing page form → Salesforce
+          Lead, Campaign = <i>SOHO-Fixed-100Plus-2LineAttach</i>.</li>
+          <li>Assigned agents call back within 24 hours; customer service number included for inbound.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Open / CTR / form completion</li>
+            <li>Leads created &amp; agent close rate</li>
+            <li>Cost per lead / sale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <div class="phase-title">Automated dialer sweep of non-responders</div>
+        <div class="phase-sub">Owner: Telesales / Dialer ops</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Exclude Phase 1 responders; dial remainder with the 2-line/$30-each bundle script.</li>
+          <li>Press # to transfer; because this is a 2-line add it likely needs an agent to finish the order rather
+          than closing on the dialer itself.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Contact / # press rate</li>
+            <li>Transfer-to-close conversion</li>
+            <li>Cost per acquisition</li>
+          </ul>
+        </div>
+        <div class="exclusion-note">Exclusion mechanism: Phase 1 Lead/Interaction status filters the dialer upload.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <div class="phase-title">Human touch — field &amp; account teams</div>
+        <div class="phase-sub">Owner: D2D / Retail</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Route remaining accounts to D2D/retail; a 2-line bundle is a stronger door-step story given the higher
+          existing bill and household size implied by TV.</li>
+          <li>Log every visit as a Customer Interaction.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Visits vs. sales</li>
+            <li>Revenue realized vs. $0.38M target</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">4</div>
+        <div class="phase-title">Sustain &amp; learn</div>
+        <div class="phase-sub">Owner: Marketing Ops / RevOps</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Untouched accounts roll into monthly nurture, since this is the second-highest $/yr opportunity.</li>
+          <li>Track whether customers accept 1 line instead of 2 — if that pattern shows up, test a "start with 1,
+          add a 2nd later" flow as a lower-friction fallback offer.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Cumulative funnel conversion vs. 12% target</li>
+            <li>1-line vs. 2-line take rate split</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="toplink" href="#init-4" onclick="window.scrollTo(0,0);return false;">↑ Back to top</a>
+</section>
+
+<!-- ================= INITIATIVE 5 ================= -->
+<section class="initiative" id="init-5">
+  <div class="init-head">
+    <div>
+      <div class="tag">Initiative 5 of 8</div>
+      <h2>Small fixed only, under $250</h2>
+    </div>
+    <div class="init-badge"><div class="n">1,746</div><div class="l">accounts</div></div>
+  </div>
+  <div class="compare">
+    <div class="col now">
+      <h4>Profile today</h4>
+      <div class="kv"><span>Avg. bill/mo</span><span>$194</span></div>
+      <div class="kv"><span>Holds</span><span>Internet + fixed voice</span></div>
+      <div class="kv"><span>Segment</span><span>Small Business, fixed-only</span></div>
+    </div>
+    <div class="col target">
+      <h4>Target offer</h4>
+      <div class="offer-name">Add 2 Mobile Lines</div>
+      <div class="offer-price">Mix Essential — $55/line &times; 2 lines = $110/mo</div>
+      <div class="metric-row">
+        <div class="m"><b>+$110</b>ARPU</div>
+        <div class="m"><b>14%</b>Est. conversion</div>
+        <div class="m"><b>$0.29M</b>Annualized</div>
+      </div>
+    </div>
+  </div>
+  <div class="overview">
+    <b class="lead">Strategy overview —</b> This is a small-business account with only internet + voice — no mobile at
+    all — and the highest conversion rate in the whole matrix (14%), which suggests genuine unmet need rather than a
+    hard sell. Position 2 mobile lines as "put your business number in your employees' pockets" rather than a generic
+    mobile add. Lead with the Mix Essential plan at $55 per line, so two lines land at an easy-to-say $110/mo add.
+  </div>
+  <div class="phases">
+    <h3 class="section-label">Phased activation plan</h3>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <div class="phase-title">Digital warm-up — email + self-service form</div>
+        <div class="phase-sub">Owner: Marketing / CX</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Email to the business decision-maker on file: "Add 2 mobile lines to your business account." Landing
+          page form → Salesforce Lead, Campaign = <i>SmallBiz-Fixed-Under250-2LineAttach</i>.</li>
+          <li>Route to an Account Executive (not a general agent) given this is a small-business account, with the
+          customer service number as the inbound fallback.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Open / CTR / form completion</li>
+            <li>Leads created &amp; AE close rate</li>
+            <li>Cost per lead / sale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <div class="phase-title">Automated dialer sweep of non-responders</div>
+        <div class="phase-sub">Owner: Telesales / Dialer ops</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Exclude Phase 1 responders; dial remainder — for business accounts, target the listed business hours
+          and a named contact where available.</li>
+          <li>Press # to transfer to an AE rather than a general sales agent, given the account value.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Contact / # press rate</li>
+            <li>AE transfer-to-close conversion</li>
+            <li>Cost per acquisition</li>
+          </ul>
+        </div>
+        <div class="exclusion-note">Exclusion mechanism: Phase 1 Lead/Interaction status filters the dialer file.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <div class="phase-title">Human touch — account teams</div>
+        <div class="phase-sub">Owner: Account Executives / Business Retail Executives</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Assign remaining accounts to AEs/BREs for a scheduled call or on-site visit, since this is a business
+          relationship better served by a named rep than a cold D2D knock.</li>
+          <li>Log every attempt as a Customer Interaction with next-step notes.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Accounts assigned vs. contacted vs. closed</li>
+            <li>Revenue realized vs. $0.29M target</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">4</div>
+        <div class="phase-title">Sustain &amp; learn</div>
+        <div class="phase-sub">Owner: Marketing Ops / RevOps</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Untouched accounts stay on the AE's book as a standing opportunity rather than dropping to mass
+          nurture, given the account value and high underlying conversion rate.</li>
+          <li>Quarterly check-in cadence from the AE if not closed in the first three phases.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Cumulative funnel conversion vs. 14% target</li>
+            <li>Open-opportunity aging on AE books</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="toplink" href="#init-5" onclick="window.scrollTo(0,0);return false;">↑ Back to top</a>
+</section>
+
+<!-- ================= INITIATIVE 7 ================= -->
+<section class="initiative" id="init-6">
+  <div class="init-head">
+    <div>
+      <div class="tag">Initiative 6 of 8</div>
+      <h2>Small mobile only, under $300</h2>
+    </div>
+    <div class="init-badge"><div class="n">1,595</div><div class="l">accounts</div></div>
+  </div>
+  <div class="compare">
+    <div class="col now">
+      <h4>Profile today</h4>
+      <div class="kv"><span>Avg. bill/mo</span><span>$216</span></div>
+      <div class="kv"><span>Holds</span><span>About 4–5 mobile lines</span></div>
+      <div class="kv"><span>Segment</span><span>Small Business, mobile-only</span></div>
+    </div>
+    <div class="col target">
+      <h4>Target offer</h4>
+      <div class="offer-name">Add Office Internet</div>
+      <div class="offer-price">Office Internet Starter — pending confirmation with Product</div>
+      <div class="metric-row">
+        <div class="m"><b>+$200</b>ARPU</div>
+        <div class="m"><b>7%</b>Est. conversion</div>
+        <div class="m"><b>$0.27M</b>Annualized</div>
+      </div>
+    </div>
+  </div>
+  <div class="overview">
+    <b class="lead">Strategy overview —</b> These are mobile-heavy small businesses (4–5 lines) with no fixed
+    footprint — meaning we've never sold them internet, which is both risk (a competitor already may have) and
+    opportunity (we already have the mobile relationship). The pitch is "you already trust us for your team's phones —
+    let us run your office internet too," bundled against their existing mobile spend to soften the ask.
+  </div>
+  <div class="phases">
+    <h3 class="section-label">Phased activation plan</h3>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <div class="phase-title">Digital warm-up — email + self-service form</div>
+        <div class="phase-sub">Owner: Marketing / CX</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Email to the business contact: "Add office internet to your account." Landing page form → Salesforce
+          Lead, Campaign = <i>SmallBiz-Mobile-Under300-InternetAttach</i>, routed to an AE queue.</li>
+          <li>Customer service number included for direct inbound.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Open / CTR / form completion</li>
+            <li>Leads created &amp; AE close rate</li>
+            <li>Cost per lead / sale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <div class="phase-title">Automated dialer sweep of non-responders</div>
+        <div class="phase-sub">Owner: Telesales / Dialer ops</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Exclude Phase 1 responders; dial remainder, confirming service address for internet feasibility as
+          part of the qualifying script.</li>
+          <li>Press # to transfer to an AE, since internet install requires a serviceability check before close.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Contact / # press rate</li>
+            <li>Serviceable-address rate</li>
+            <li>Transfer-to-close conversion</li>
+          </ul>
+        </div>
+        <div class="exclusion-note">Exclusion mechanism: Phase 1 Lead/Interaction status filters the dialer file.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <div class="phase-title">Human touch — account teams</div>
+        <div class="phase-sub">Owner: Account Executives / Business Retail Executives</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Route remaining accounts to AEs/BREs to confirm serviceability and close in person or by scheduled
+          call.</li>
+          <li>Log every touch as a Customer Interaction, including serviceability outcome.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Accounts contacted vs. serviceable vs. closed</li>
+            <li>Revenue realized vs. $0.27M target</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">4</div>
+        <div class="phase-title">Sustain &amp; learn</div>
+        <div class="phase-sub">Owner: Marketing Ops / RevOps</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Non-serviceable addresses get flagged separately from "not interested" — feed that list to the network
+          build-out team as expansion demand, and re-approach once serviceable.</li>
+          <li>Everyone else rolls into quarterly nurture.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Cumulative funnel conversion vs. 7% target</li>
+            <li>Non-serviceable demand pipeline for network planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="toplink" href="#init-6" onclick="window.scrollTo(0,0);return false;">↑ Back to top</a>
+</section>
+
+<!-- ================= INITIATIVE 8 ================= -->
+<section class="initiative" id="init-7">
+  <div class="init-head">
+    <div>
+      <div class="tag">Initiative 7 of 8</div>
+      <h2>Small mobile only, $300 and above</h2>
+    </div>
+    <div class="init-badge"><div class="n">1,369</div><div class="l">accounts</div></div>
+  </div>
+  <div class="compare">
+    <div class="col now">
+      <h4>Profile today</h4>
+      <div class="kv"><span>Avg. bill/mo</span><span>$463</span></div>
+      <div class="kv"><span>Holds</span><span>About 8–9 mobile lines</span></div>
+      <div class="kv"><span>Segment</span><span>Small Business, mobile-only</span></div>
+    </div>
+    <div class="col target">
+      <h4>Target offer</h4>
+      <div class="offer-name">Add Office Internet + Voice</div>
+      <div class="offer-price">Office Internet + Voice Bundle — pending confirmation with Product</div>
+      <div class="metric-row">
+        <div class="m"><b>+$200</b>ARPU</div>
+        <div class="m"><b>7%</b>Est. conversion</div>
+        <div class="m"><b>$0.23M</b>Annualized</div>
+      </div>
+    </div>
+  </div>
+  <div class="overview">
+    <b class="lead">Strategy overview —</b> The heaviest mobile users in the matrix (8–9 lines, $463/mo) with zero
+    fixed footprint. This is a strategic account-retention play as much as a cross-sell: a business this size is a
+    target for competitor fixed-line bundles, so winning the internet + voice attach protects the whole relationship,
+    not just the incremental $200 ARPU. Treat this as a named-account motion from day one rather than mass email.
+  </div>
+  <div class="phases">
+    <h3 class="section-label">Phased activation plan</h3>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <div class="phase-title">Digital warm-up — email as an appointment-setter</div>
+        <div class="phase-sub">Owner: Marketing / CX</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Personalized email from the account's assigned rep (if one exists) offering an internet + voice
+          consultation, with a landing page that books a meeting rather than just capturing interest.</li>
+          <li>Form submission creates a Salesforce Lead, Campaign = <i>SmallBiz-Mobile-300Plus-InternetVoiceAttach</i>,
+          routed to the account's named AE where one is assigned.</li>
+          <li>Customer service number included as a fallback for direct inbound.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Open / CTR / consultation bookings</li>
+            <li>Leads created &amp; AE-led close rate</li>
+            <li>Cost per lead / sale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <div class="phase-title">Automated dialer sweep of non-responders</div>
+        <div class="phase-sub">Owner: Telesales / Dialer ops</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Exclude Phase 1 responders; dial remainder to confirm serviceability and set an AE appointment rather
+          than sell on the call.</li>
+          <li>Press # to transfer directly to the account's AE where assigned, otherwise to AE scheduling.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Contact / # press rate</li>
+            <li>Serviceable-address rate</li>
+            <li>Appointments booked &amp; show rate</li>
+          </ul>
+        </div>
+        <div class="exclusion-note">Exclusion mechanism: Phase 1 Lead/Interaction status filters the dialer file.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <div class="phase-title">Human touch — Account Executives (lead phase for this initiative)</div>
+        <div class="phase-sub">Owner: Account Executives / Business Retail Executives</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Given the account value, AEs should proactively reach out even before Phase 1/2 conclude for the
+          highest-spend accounts in this group — treat the top decile by bill as immediate outreach.</li>
+          <li>Log every touch as a Customer Interaction with next steps and a retention-risk flag if a competitor
+          conversation is mentioned.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Accounts contacted vs. proposed vs. closed</li>
+            <li>Revenue realized vs. $0.23M target</li>
+            <li>Retention-risk accounts flagged and resolved</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">4</div>
+        <div class="phase-title">Sustain &amp; learn</div>
+        <div class="phase-sub">Owner: Marketing Ops / RevOps</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Every account in this initiative stays a standing AE relationship with quarterly check-ins — this
+          group should never fully roll off to mass nurture given both deal size and retention exposure.</li>
+          <li>Feed win/loss and competitor-mention data into quarterly account planning.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Cumulative funnel conversion vs. 7% target</li>
+            <li>Base retention (churn) for this segment, tracked independent of the attach rate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="toplink" href="#init-7" onclick="window.scrollTo(0,0);return false;">↑ Back to top</a>
+</section>
+
+<!-- ================= INITIATIVE 6 ================= -->
+<section class="initiative" id="init-8">
+  <div class="init-head">
+    <div>
+      <div class="tag">Initiative 8 of 8</div>
+      <h2>Small fixed only, $250 and above</h2>
+    </div>
+    <div class="init-badge"><div class="n">1,870</div><div class="l">accounts</div></div>
+  </div>
+  <div class="compare">
+    <div class="col now">
+      <h4>Profile today</h4>
+      <div class="kv"><span>Avg. bill/mo</span><span>$365</span></div>
+      <div class="kv"><span>Holds</span><span>1–2 internet, voice, TV</span></div>
+      <div class="kv"><span>Segment</span><span>Small Business, fixed-only</span></div>
+    </div>
+    <div class="col target">
+      <h4>Target offer</h4>
+      <div class="offer-name">Add a 4-Line Mobile Fleet</div>
+      <div class="offer-price">Business Mobile Fleet Plan — pricing to confirm with Pricing/Product</div>
+      <div class="metric-row">
+        <div class="m"><b>+$200</b>ARPU</div>
+        <div class="m"><b>14%</b>Est. conversion</div>
+        <div class="m"><b>$0.63M</b>Annualized</div>
+      </div>
+    </div>
+  </div>
+  <div class="overview">
+    <b class="lead">Strategy overview —</b> The single biggest dollar opportunity in the matrix ($0.63M/yr) sits here:
+    established multi-service businesses (internet, voice, TV) with no mobile fleet at all. This is not a self-service
+    offer — a 4-line fleet is a business decision that needs a proper account conversation, so this initiative should
+    skip mass email as the primary lever and prioritize the AE-led motion earlier than the other groups.
+  </div>
+  <div class="phases">
+    <h3 class="section-label">Phased activation plan</h3>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">1</div>
+        <div class="phase-title">Digital warm-up — email as an appointment-setter</div>
+        <div class="phase-sub">Owner: Marketing / CX</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Email frames this as "let's talk about equipping your team with a business mobile fleet," with the
+          form built to book a consultation slot rather than just capture interest.</li>
+          <li>Form submission creates a Salesforce Lead, Campaign = <i>SmallBiz-Fixed-250Plus-4LineFleet</i>, routed
+          directly to an AE, with the customer service number as a fallback for anyone who wants to call in first.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Open / CTR / form completion (consultation bookings)</li>
+            <li>Leads created &amp; AE-led close rate</li>
+            <li>Cost per lead / sale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">2</div>
+        <div class="phase-title">Automated dialer sweep of non-responders</div>
+        <div class="phase-sub">Owner: Telesales / Dialer ops</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Exclude Phase 1 responders; dial remainder to set an AE appointment rather than sell on the call.</li>
+          <li>Press # to transfer to AE scheduling, not to a general sales queue.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Contact / # press rate</li>
+            <li>Appointments booked</li>
+            <li>Show-rate for booked appointments</li>
+          </ul>
+        </div>
+        <div class="exclusion-note">Exclusion mechanism: Phase 1 Lead/Interaction status filters the dialer file.</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">3</div>
+        <div class="phase-title">Human touch — Account Executives (lead phase for this initiative)</div>
+        <div class="phase-sub">Owner: Account Executives / Business Retail Executives</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>AEs personally review every account in this group before outreach, given deal size — pre-build a
+          proposed fleet configuration and price before the call.</li>
+          <li>Log every touch as a Customer Interaction with a next-step and expected close date.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Accounts reviewed vs. proposed vs. closed</li>
+            <li>Revenue realized vs. $0.63M target</li>
+            <li>Average deal size vs. $200 ARPU target</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <div class="phase-num">4</div>
+        <div class="phase-title">Sustain &amp; learn</div>
+        <div class="phase-sub">Owner: Marketing Ops / RevOps</div>
+      </div>
+      <div class="phase-body">
+        <ol>
+          <li>Every account stays as a standing AE opportunity with a quarterly touchpoint — do not roll this group
+          into mass nurture given the deal size.</li>
+          <li>Track fleet size actually sold (2, 3, or 4 lines) to refine the offer for future waves.</li>
+        </ol>
+        <div class="kpi-box">
+          <div class="kpi-title">Measurement</div>
+          <ul>
+            <li>Cumulative funnel conversion vs. 14% target</li>
+            <li>Actual fleet size distribution vs. 4-line target</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="toplink" href="#init-8" onclick="window.scrollTo(0,0);return false;">↑ Back to top</a>
+</section>
+
+<div class="footer-note">
+  Cross-sell total in scope: <b>19,664 accounts</b> · <b>$2.2M</b> annualized potential across 8 initiatives.
+  Wireline-only legacy voice (1,426 accounts) and already-multi-service accounts (1,136 accounts) are defend-only
+  and sit outside this cross-sell motion — they belong in the Stock/retention workstream.
+</div>
+
+</main>
+</body>
+</html>
