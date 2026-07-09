@@ -249,6 +249,7 @@
   }
   .tools-line b{ color:var(--blue-dark); font-weight:700;}
   .tools-line .tbd{ color:#92620a; font-style:italic;}
+  .tbd{ color:#92620a; font-style:italic;}
 
   .footer-note{
     text-align:center; color:var(--muted); font-size:12.5px; margin-top:20px; padding:16px;
@@ -1469,11 +1470,13 @@
     <tr><th>#</th><th>Action</th><th>Owner</th><th>Tool / input needed</th></tr>
     <tr><td>1</td><td>Pull the Phase 1 non-responder list, excluding any Lead marked Responded/Converted</td><td><span class="owner-chip">CX &amp; BI Team</span></td><td>Salesforce report/export; Lead Status filter</td></tr>
     <tr><td>2</td><td>Load the list into the Progressive Dialer campaign</td><td><span class="owner-chip">ACD Team</span></td><td>Progressive Dialer platform access (IVR Team to confirm system); formatted dial list</td></tr>
-    <tr><td>3</td><td>Confirm the call script and offer positioning with agents</td><td><span class="owner-chip">Learning Experience Team</span></td><td>Script sign-off; offer sheet</td></tr>
-    <tr><td>4</td><td>Run the outbound Progressive Dialer campaign</td><td><span class="owner-chip">ACD Team</span></td><td>Progressive Dialer; headset/softphone; script</td></tr>
-    <tr><td>5</td><td>Transfer interested customers (press #) to a live agent</td><td><span class="owner-chip">IVR System</span></td><td>Call routing configuration; available agent pool</td></tr>
-    <tr><td>6</td><td>Log every call outcome as a Customer Interaction on the account</td><td><span class="owner-chip">Agent</span></td><td>Salesforce Customer Interaction object</td></tr>
-    <tr><td>7</td><td>Report contact rate, transfer rate, and close rate at phase close</td><td><span class="owner-chip">ACD &amp; CX Team</span></td><td>Dialer reporting export; Salesforce dashboard</td></tr>
+    <tr><td>3</td><td>Upload the list to Leads in Salesforce</td><td><span class="owner-chip">CX Team</span></td><td>Salesforce Lead import; campaign tagging</td></tr>
+    <tr><td>4</td><td>Confirm the call script and offer positioning with agents</td><td><span class="owner-chip">Learning Experience Team</span></td><td>Script sign-off; offer sheet</td></tr>
+    <tr><td>5</td><td>Run the outbound Progressive Dialer campaign</td><td><span class="owner-chip">ACD Team</span></td><td>Progressive Dialer; headset/softphone; script</td></tr>
+    <tr><td>6</td><td>Transfer answered call directly to an available agent</td><td><span class="owner-chip">IVR System</span></td><td>Call routing configuration; available agent pool</td></tr>
+    <tr><td>7</td><td>Use script designed for initiative</td><td><span class="owner-chip">Agent</span></td><td>Script from Learning Experience Team, per initiative</td></tr>
+    <tr><td>8</td><td>Log every call outcome on the lead. Search by the ANI in the Leads looking for the list "B2B Cross-Selling Strategy July-Aug 2026," which will filter all campaign leads.</td><td><span class="owner-chip">Agent</span></td><td><span class="tbd">Pending: fields to update</span></td></tr>
+    <tr><td>9</td><td>Report contact rate, transfer rate, and close rate at phase close</td><td><span class="owner-chip">ACD &amp; CX Team</span></td><td>Dialer reporting export; Salesforce dashboard</td></tr>
   </table>
 </div>
 
