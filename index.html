@@ -99,6 +99,53 @@
   }
   a.script-dl:hover{ background:var(--blue-dark);}
 
+  .gantt{ margin-top:8px;}
+  .gantt-axis{ position:relative; height:20px; border-bottom:1px solid var(--line); margin-left:170px; }
+  .gantt-axis-tick{
+    position:absolute; top:0; font-size:11px; font-weight:700; color:var(--muted); transform:translateX(-50%);
+  }
+  .gantt-row{ display:flex; align-items:center; margin-bottom:14px; }
+  .gantt-label{
+    width:170px; flex-shrink:0; font-size:12.5px; font-weight:700; color:var(--ink); padding-right:12px;
+  }
+  .gantt-label span{ display:block; font-size:10.8px; font-weight:600; color:var(--muted); margin-top:2px;}
+  .gantt-track{
+    position:relative; flex:1; height:34px; background:#f7f9fb; border-radius:6px; border:1px solid var(--line);
+  }
+  .gantt-grid{
+    position:absolute; top:0; bottom:0; width:1px; background:var(--line);
+  }
+  .gantt-seg{
+    position:absolute; top:4px; bottom:4px; border-radius:4px; font-size:10.5px; font-weight:700; color:#fff;
+    display:flex; align-items:center; justify-content:center; overflow:hidden; white-space:nowrap; padding:0 4px;
+  }
+  .seg-p1{ background:var(--blue);}
+  .seg-p2{ background:var(--blue-dark);}
+  .seg-p3{ background:var(--orange);}
+  .seg-p4{
+    background:repeating-linear-gradient(135deg,#8a94a3,#8a94a3 6px,#9aa4b2 6px,#9aa4b2 12px);
+  }
+  .seg-pending{
+    background:repeating-linear-gradient(135deg,#cfd6dd,#cfd6dd 6px,#dde2e7 6px,#dde2e7 12px); color:#5b6b7a;
+  }
+  .gantt-row-pending .gantt-label{ color:var(--muted);}
+  .gantt-legend{
+    display:flex; flex-wrap:wrap; gap:16px; margin-top:14px; margin-left:170px; font-size:11.5px; color:var(--muted);
+  }
+  .gantt-legend .dot{
+    display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:middle;
+  }
+  .dot-p1{ background:var(--blue);}
+  .dot-p2{ background:var(--blue-dark);}
+  .dot-p3{ background:var(--orange);}
+  .dot-p4{ background:#8a94a3;}
+  .dot-pending{ background:#cfd6dd;}
+  @media (max-width:720px){
+    .gantt-axis, .gantt-legend{ margin-left:0;}
+    .gantt-row{ flex-direction:column; align-items:stretch;}
+    .gantt-label{ width:auto; margin-bottom:6px;}
+  }
+
   nav.toc{
     position:sticky; top:47px; z-index:50; background:#fff; border-bottom:1px solid var(--line);
     padding:10px 5vw; display:flex; gap:6px; overflow-x:auto; box-shadow:0 2px 6px rgba(0,0,0,.04);
@@ -279,6 +326,7 @@
   <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">Overview</button>
   <button class="tab-btn" data-tab="process" onclick="switchTab('process')">Process</button>
   <button class="tab-btn" data-tab="requirements" onclick="switchTab('requirements')">Requirements</button>
+  <button class="tab-btn" data-tab="timeline" onclick="switchTab('timeline')">Timeline</button>
   <button class="tab-btn" data-tab="scripts" onclick="switchTab('scripts')">Scripts</button>
 </div>
 
@@ -1612,6 +1660,145 @@
     <tr><td>Day 6–9</td><td>Continue monitoring and agent callbacks; prep the Phase 2 dial list</td></tr>
     <tr><td>Day 10</td><td>Phase 1 closes; export non-responders and load the Progressive Dialer campaign</td></tr>
     <tr><td>Day 11</td><td>Phase 2 begins for initiatives 1–5</td></tr>
+  </table>
+</div>
+
+</main>
+</div>
+
+<div id="tab-timeline" class="tab-panel">
+<main>
+
+<div class="intro-block">
+  <b>How to read this tab:</b> dates are calculated from the same Day 0/10/40/70/71+ phase cadence used in the
+  Overview and Process tabs, counting calendar days (not business days). Initiatives 1–4 have a confirmed kickoff
+  date; Initiatives 5–8 are marked <b>Pending Planning</b> until Product confirms their offers and a kickoff date
+  is set for them.
+</div>
+
+<div class="section-card">
+  <h2>Session 1 — Overall program timeline</h2>
+  <p class="card-sub">All initiatives on one shared calendar axis, July 2026 through mid-November 2026.</p>
+
+  <div class="gantt">
+    <div class="gantt-axis">
+      <div class="gantt-axis-tick" style="left:15.2%;">Aug 1</div>
+      <div class="gantt-axis-tick" style="left:40%;">Sep 1</div>
+      <div class="gantt-axis-tick" style="left:64%;">Oct 1</div>
+      <div class="gantt-axis-tick" style="left:88.8%;">Nov 1</div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label">Initiative 1 &amp; 2<span>Kickoff Jul 13, 2026</span></div>
+      <div class="gantt-track">
+        <div class="gantt-grid" style="left:15.2%;"></div>
+        <div class="gantt-grid" style="left:40%;"></div>
+        <div class="gantt-grid" style="left:64%;"></div>
+        <div class="gantt-grid" style="left:88.8%;"></div>
+        <div class="gantt-seg seg-p1" style="left:0%;width:8%;" title="Phase 1: Jul 13 – Jul 23">P1</div>
+        <div class="gantt-seg seg-p2" style="left:8.8%;width:23.2%;" title="Phase 2: Jul 24 – Aug 22">P2</div>
+        <div class="gantt-seg seg-p3" style="left:32.8%;width:23.2%;" title="Phase 3: Aug 23 – Sep 21">P3</div>
+        <div class="gantt-seg seg-p4" style="left:56.8%;width:43.2%;" title="Phase 4: Sep 22 onward (ongoing)">P4 — ongoing</div>
+      </div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label">Initiative 3 &amp; 4<span>Kickoff Jul 20, 2026</span></div>
+      <div class="gantt-track">
+        <div class="gantt-grid" style="left:15.2%;"></div>
+        <div class="gantt-grid" style="left:40%;"></div>
+        <div class="gantt-grid" style="left:64%;"></div>
+        <div class="gantt-grid" style="left:88.8%;"></div>
+        <div class="gantt-seg seg-p1" style="left:5.6%;width:8%;" title="Phase 1: Jul 20 – Jul 30">P1</div>
+        <div class="gantt-seg seg-p2" style="left:14.4%;width:23.2%;" title="Phase 2: Jul 31 – Aug 29">P2</div>
+        <div class="gantt-seg seg-p3" style="left:38.4%;width:23.2%;" title="Phase 3: Aug 30 – Sep 28">P3</div>
+        <div class="gantt-seg seg-p4" style="left:62.4%;width:37.6%;" title="Phase 4: Sep 29 onward (ongoing)">P4 — ongoing</div>
+      </div>
+    </div>
+
+    <div class="gantt-row gantt-row-pending">
+      <div class="gantt-label">Initiatives 5–8<span>Pending Planning</span></div>
+      <div class="gantt-track">
+        <div class="gantt-grid" style="left:15.2%;"></div>
+        <div class="gantt-grid" style="left:40%;"></div>
+        <div class="gantt-grid" style="left:64%;"></div>
+        <div class="gantt-grid" style="left:88.8%;"></div>
+        <div class="gantt-seg seg-pending" style="left:0%;width:100%;">Pending Planning — kickoff TBD once Product confirms offers</div>
+      </div>
+    </div>
+
+    <div class="gantt-legend">
+      <span><i class="dot dot-p1"></i>Phase 1 — Digital Warm-Up (10 days)</span>
+      <span><i class="dot dot-p2"></i>Phase 2 — Progressive Dialer (30 days)</span>
+      <span><i class="dot dot-p3"></i>Phase 3 — Human Touch (30 days)</span>
+      <span><i class="dot dot-p4"></i>Phase 4 — Sustain &amp; Learn (ongoing)</span>
+      <span><i class="dot dot-pending"></i>Pending Planning</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-card">
+  <h2>Session 2 — Timeline by group</h2>
+  <p class="card-sub">Same dates, broken out per initiative with exact phase start/end.</p>
+
+  <h3 style="margin:18px 0 8px;font-size:14.5px;">Initiative 1 — SOHO mobile only, under $60</h3>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Start</th><th>End</th></tr>
+    <tr><td>Phase 1 — Digital Warm-Up</td><td>Jul 13, 2026</td><td>Jul 23, 2026</td></tr>
+    <tr><td>Phase 2 — Progressive Dialer</td><td>Jul 24, 2026</td><td>Aug 22, 2026</td></tr>
+    <tr><td>Phase 3 — Human Touch</td><td>Aug 23, 2026</td><td>Sep 21, 2026</td></tr>
+    <tr><td>Phase 4 — Sustain &amp; Learn</td><td>Sep 22, 2026</td><td>Ongoing</td></tr>
+  </table>
+
+  <h3 style="margin:18px 0 8px;font-size:14.5px;">Initiative 2 — SOHO mobile only, $60 and above</h3>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Start</th><th>End</th></tr>
+    <tr><td>Phase 1 — Digital Warm-Up</td><td>Jul 13, 2026</td><td>Jul 23, 2026</td></tr>
+    <tr><td>Phase 2 — Progressive Dialer</td><td>Jul 24, 2026</td><td>Aug 22, 2026</td></tr>
+    <tr><td>Phase 3 — Human Touch</td><td>Aug 23, 2026</td><td>Sep 21, 2026</td></tr>
+    <tr><td>Phase 4 — Sustain &amp; Learn</td><td>Sep 22, 2026</td><td>Ongoing</td></tr>
+  </table>
+
+  <h3 style="margin:18px 0 8px;font-size:14.5px;">Initiative 3 — SOHO fixed only, under $100</h3>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Start</th><th>End</th></tr>
+    <tr><td>Phase 1 — Digital Warm-Up</td><td>Jul 20, 2026</td><td>Jul 30, 2026</td></tr>
+    <tr><td>Phase 2 — Progressive Dialer</td><td>Jul 31, 2026</td><td>Aug 29, 2026</td></tr>
+    <tr><td>Phase 3 — Human Touch</td><td>Aug 30, 2026</td><td>Sep 28, 2026</td></tr>
+    <tr><td>Phase 4 — Sustain &amp; Learn</td><td>Sep 29, 2026</td><td>Ongoing</td></tr>
+  </table>
+
+  <h3 style="margin:18px 0 8px;font-size:14.5px;">Initiative 4 — SOHO fixed only, $100 and above</h3>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Start</th><th>End</th></tr>
+    <tr><td>Phase 1 — Digital Warm-Up</td><td>Jul 20, 2026</td><td>Jul 30, 2026</td></tr>
+    <tr><td>Phase 2 — Progressive Dialer</td><td>Jul 31, 2026</td><td>Aug 29, 2026</td></tr>
+    <tr><td>Phase 3 — Human Touch</td><td>Aug 30, 2026</td><td>Sep 28, 2026</td></tr>
+    <tr><td>Phase 4 — Sustain &amp; Learn</td><td>Sep 29, 2026</td><td>Ongoing</td></tr>
+  </table>
+
+  <h3 style="margin:18px 0 8px;font-size:14.5px;">Initiative 5 — Small fixed only, under $250</h3>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Start</th><th>End</th></tr>
+    <tr><td colspan="3"><span class="tbd">Pending Planning — kickoff date to be set</span></td></tr>
+  </table>
+
+  <h3 style="margin:18px 0 8px;font-size:14.5px;">Initiative 6 — Small mobile only, under $300</h3>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Start</th><th>End</th></tr>
+    <tr><td colspan="3"><span class="tbd">Pending Planning — kickoff date to be set once Product confirms the offer</span></td></tr>
+  </table>
+
+  <h3 style="margin:18px 0 8px;font-size:14.5px;">Initiative 7 — Small mobile only, $300 and above</h3>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Start</th><th>End</th></tr>
+    <tr><td colspan="3"><span class="tbd">Pending Planning — kickoff date to be set once Product confirms the offer</span></td></tr>
+  </table>
+
+  <h3 style="margin:18px 0 8px;font-size:14.5px;">Initiative 8 — Small fixed only, $250 and above</h3>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Start</th><th>End</th></tr>
+    <tr><td colspan="3"><span class="tbd">Pending Planning — kickoff date to be set once Product confirms the offer</span></td></tr>
   </table>
 </div>
 
